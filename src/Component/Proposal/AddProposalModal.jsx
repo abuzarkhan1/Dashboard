@@ -260,7 +260,8 @@ const AddProposalModal = ({
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm font-medium text-white">
-                          <span className="text-sm text-slate-400">AED </span>999
+                          <span className="text-sm text-slate-400">AED </span>
+                          999
                         </div>
                       </td>
                       <td className="px-6 py-4">
@@ -273,7 +274,9 @@ const AddProposalModal = ({
                           <div className="flex items-center bg-slate-700 border border-slate-600 rounded-full p-1 shadow-sm group-hover:border-blue-400 transition-all duration-300">
                             <button
                               className="w-7 h-7 rounded-full bg-slate-600 text-white hover:bg-blue-500 transition-colors duration-200 flex items-center justify-center"
-                              onClick={() => handleQuantityChange(formValues.quantity - 1)}
+                              onClick={() =>
+                                handleQuantityChange(formValues.quantity - 1)
+                              }
                               disabled={formValues.quantity <= 1}
                             >
                               <span className="text-sm font-medium">−</span>
@@ -288,7 +291,9 @@ const AddProposalModal = ({
 
                             <button
                               className="w-7 h-7 rounded-full bg-slate-600 text-white hover:bg-blue-500 transition-colors duration-200 flex items-center justify-center"
-                              onClick={() => handleQuantityChange(formValues.quantity + 1)}
+                              onClick={() =>
+                                handleQuantityChange(formValues.quantity + 1)
+                              }
                               disabled={formValues.quantity >= 99}
                             >
                               <span className="text-sm font-medium">+</span>
@@ -327,7 +332,9 @@ const AddProposalModal = ({
                     </div>
                     <div>
                       <h4 className="font-medium text-white">Modern Sofa</h4>
-                      <p className="text-sm text-slate-400">SKU-MS001 • Qty: 1</p>
+                      <p className="text-sm text-slate-400">
+                        SKU-MS001 • Qty: 1
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-6">
@@ -340,11 +347,52 @@ const AddProposalModal = ({
               </div>
             </div>
 
-         {/* Footer */}
-         <div className="flex items-center justify-between pt-6 border-t border-slate-700">
+            {/* New Discount Section */}
+            <div className="bg-slate-700/50 rounded-2xl border border-slate-600 p-6 mt-6">
+              <div className="flex items-center justify-between">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-white">
+                    Pricing Details
+                  </h3>
+                  <div className="flex items-center gap-6">
+                    <div className="group">
+                      <label className="block text-sm font-medium text-slate-300 mb-2 group-hover:text-blue-400 transition-colors duration-200">
+                        Discount (%)
+                      </label>
+                      <input
+                        type="number"
+                        value={0}
+                        min="0"
+                        max="100"
+                        className="w-32 px-4 py-2 bg-slate-700 border border-slate-600 rounded-xl text-white 
+                             transition-all duration-300 ease-in-out
+                             focus:bg-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20
+                             hover:border-blue-400"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="text-right space-y-2">
+                  <div className="text-slate-400">
+                    Original Price:{" "}
+                    <span className="line-through">AED 999</span>
+                  </div>
+                  {formValues.discount > 0 && (
+                    <div className="text-green-400">
+                      Discount Applied: {formValues.discount}% (-AED 500)
+                    </div>
+                  )}
+                  <div className="text-xl font-semibold text-white">
+                    Final Price: <span className="text-blue-400">AED 500</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="flex items-center justify-between pt-6 border-t border-slate-700">
               <div className="text-xl font-semibold text-white">
-                Total Amount:{" "}
-                <span className="text-blue-400">AED 999</span>
+                Total Amount: <span className="text-blue-400">AED 999</span>
               </div>
               <div className="flex items-center gap-4">
                 <motion.button
