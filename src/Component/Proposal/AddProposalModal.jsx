@@ -392,7 +392,7 @@ const AddProposalModal = ({
             {/* Footer */}
             <div className="flex items-center justify-between pt-6 border-t border-slate-700">
               <div className="text-xl font-semibold text-white">
-                Total Amount: <span className="text-blue-400">AED 999</span>
+                Total Amount: <span className="text-blue-400">AED 500</span>
               </div>
               <div className="flex items-center gap-4">
                 <motion.button
