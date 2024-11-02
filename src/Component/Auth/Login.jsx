@@ -47,15 +47,15 @@ const Login = ({ onLogin }) => {
 
         {/* Logo/Icon Section */}
         <div className="flex justify-center mb-8 relative">
-          <div className="bg-orange-900/20 p-4 rounded-full relative">
+          <div className="bg-blue-900/20 p-4 rounded-full relative">
             <div className="absolute opacity-25" />
-            <LogIn size={48} className="text-orange-500 animate-pulse" />
+            <LogIn size={48} className="text-blue-500 animate-pulse" />
           </div>
         </div>
 
         {/* Header */}
         <div className="text-center mb-8">
-          <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
+          <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">
             Welcome Back
           </h3>
           <p className="text-slate-400 text-lg">
@@ -70,7 +70,7 @@ const Login = ({ onLogin }) => {
               <input
                 type="text"
                 placeholder="Username"
-                className="w-full pl-10 pr-4 py-3 bg-slate-800/50 text-slate-200 rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 bg-slate-800/50 text-slate-200 rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
@@ -84,7 +84,7 @@ const Login = ({ onLogin }) => {
               <input
                 type="password"
                 placeholder="Password"
-                className="w-full pl-10 pr-4 py-3 bg-slate-800/50 text-slate-200 rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 bg-slate-800/50 text-slate-200 rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -98,7 +98,7 @@ const Login = ({ onLogin }) => {
           <div className="flex justify-end">
             <a
               href="#"
-              className="text-sm text-orange-400 hover:text-orange-300 transition-colors duration-200"
+              className="text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200"
             >
               Forgot Password?
             </a>
@@ -110,9 +110,9 @@ const Login = ({ onLogin }) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-500 text-white rounded-lg
-                       hover:from-orange-700 hover:to-orange-600 transition-all duration-200 font-medium
-                       shadow-lg shadow-orange-500/10 hover:shadow-orange-500/20 flex items-center justify-center gap-2"
+              className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg
+                       hover:from-blue-700 hover:to-blue-600 transition-all duration-200 font-medium
+                       shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 flex items-center justify-center gap-2"
             >
               <LogIn size={20} />
               Sign In
@@ -122,7 +122,7 @@ const Login = ({ onLogin }) => {
 
         <p className="mt-8 text-center text-slate-400">
           Don't have an account?{" "}
-          <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors duration-200">
+          <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors duration-200">
             Create Account
           </a>
         </p>
