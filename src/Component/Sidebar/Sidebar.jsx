@@ -14,6 +14,47 @@ import {
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+const LogoHeader = ({ isCollapsed = false }) => {
+  return (
+    <div className="p-6 flex items-center justify-center">
+      <motion.div
+        animate={{ scale: isCollapsed ? 0.8 : 1 }}
+        className="flex items-center"
+      >
+        {!isCollapsed && (
+          <>
+            <div className="relative">
+              <motion.div
+                initial={{ rotate: -20, scale: 0.8 }}
+                animate={{ rotate: 0, scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center"
+              >
+                <Building2 className="w-8 h-8 text-blue-500" />
+              </motion.div>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full"
+              />
+            </div>
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="ml-3 flex items-center"
+            >
+              <span className="font-bold text-2xl text-white">QW</span>
+              <span className="font-medium text-2xl text-blue-400 ml-1.5">Homes</span>
+            </motion.div>
+          </>
+        )}
+      </motion.div>
+    </div>
+  );
+};
+
 const Sidebar = ({ onLogout }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -82,26 +123,7 @@ const Sidebar = ({ onLogout }) => {
         </motion.div>
       </button>
 
-      <div className="p-6 flex items-center justify-center">
-        <motion.div
-          animate={{ scale: isCollapsed ? 0.8 : 1 }}
-          className="flex items-center"
-        >
-          {!isCollapsed && (
-            <>
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center">
-                <img src="/src/images/Layer_1.png" className="w-10 h-10" />
-              </div>
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="ml-3 font-bold text-xl"
-              >
-              </motion.span>
-            </>
-          )}
-        </motion.div>
-      </div>
+      <LogoHeader isCollapsed={isCollapsed} />
 
       {/* Menu Groups */}
       <div className="flex-1 overflow-y-auto px-4 scrollbar-hide">
@@ -155,15 +177,13 @@ const Sidebar = ({ onLogout }) => {
 
       {/* Add custom scrollbar styles */}
       <style jsx global>{`
-        /* Hide scrollbar for Chrome, Safari and Opera */
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
 
-        /* Hide scrollbar for IE, Edge and Firefox */
         .scrollbar-hide {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
 
