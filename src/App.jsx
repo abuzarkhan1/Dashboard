@@ -44,7 +44,7 @@ function AppContent() {
       <Sidebar onLogout={handleLogout} />
       <div className="flex flex-col flex-1">
         <Navbar />
-        {children}
+        <span className="overflow-auto">{children}</span>
       </div>
     </div>
   );
@@ -123,4 +123,3 @@ function AppContent() {
 }
 
 export default App;
-

@@ -24,7 +24,7 @@ const Sidebar = ({ onLogout }) => {
     {
       title: 'MAIN',
       items: [
-        // { name: 'Dashboard', icon: Home, to: '/dashboard' },
+        { name: 'Dashboard', icon: Home, to: '/dashboard' },
         { name: 'Suppliers', icon: Users, to: '/supplier' },
       ]
     },
