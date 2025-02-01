@@ -187,7 +187,7 @@ const Dashboard = () => {
     <div className="min-h-screen bg-slate-900">
       <div className="max-w-7xl mx-auto p-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-white">Dashboard Overview</h1>
+          <h1 className="text-4xl font-bold text-white">Dashboard <span className="text-blue-400"> Overview </span> </h1>
           <p className="text-slate-400 mt-1">Monitor your business metrics</p>
         </div>
 
